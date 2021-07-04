@@ -1,0 +1,42 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: rgb(22,32,85);
+    background-image: linear-gradient(30deg, rgb(32, 38, 121) 29%, rgba(34,36,111,1) 58%, rgba(40,36,111,1) 60%);
+    overflow: hidden;
+    height: 100vh;
+}
+.moon{
+    background-image: radial-gradient(circle, rgba(19,34,63,1) 48%, rgba(14,26,48,1) 75%);
+    width: 256px;
+    height: 256px;
+    border-radius: 50%;
+    position: relative;
+}
+.moon:before{
+    content: '';
+    position: absolute;
+    background:#dda9a1;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    z-index: -1;
+    animation: 4s moon linear infinite alternate;
+}
+@keyframes moon{
+    100%{
+        transform: translate(10%,-10%) scale(0.9);
+    }
+    50%{
+        transform: translate(0px,0px) scale(1.02);
+        box-shadow:  0 0 10px #f5ecea, 0 0 80px 8px #ce9e96;
+        background:#eed3cf;
+    }
+    0%{
+        transform: translate(-10%,10%) scale(0.9);
+    }
+}
